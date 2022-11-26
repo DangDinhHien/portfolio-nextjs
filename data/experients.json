@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "company": "Ominext Group",
+        "role": "Frontend Developer",
+        "logo": "/images/ominext_logo.png",
+        "icon_skills": [
+            "/images/next_icon.png",
+            "/images/ts_icon.png",
+            "/images/tailwind_icon.png",
+            "/images/firebase_icon.png"
+        ],
+        "descriptions": [
+            "Maintain and upgrade applications with new features.",
+            "Code review and assign tasks for junior developers."
+        ],
+        "start_time": "09/2022",
+        "end_time": "Present"
+    },
+    {
+        "id": 2,
+        "company": "Hybrid Technologies VN",
+        "role": "FullStack Developer",
+        "logo": "/images/hybrid_logo.svg",
+        "icon_skills": [
+            "/images/vue_icon.png",
+            "/images/js_icon.png",
+            "/images/fastapi_icon.svg",
+            "/images/google_map_icon.png"
+        ],
+        "descriptions": [
+            "Design and implement the core modules for the team.",
+            "Participate in analysis requirements and write the basic design document."
+        ],
+        "start_time": "10/2020",
+        "end_time": "08/2022"
+    },
+    {
+        "id": 3,
+        "company": "Rikkei Soft",
+        "role": "Intern Developer",
+        "logo": "/images/rikkei_logo.png",
+        "icon_skills": [
+            "/images/react_icon.png",
+            "/images/html_icon.png",
+            "/images/css_icon.png",
+            "/images/js_icon.png"
+        ],
+        "descriptions": [
+            "Design and develop new modules for web applications.",
+            "Team work and git-flow."
+        ],
+        "start_time": "06/2019",
+        "end_time": "09/2019"
+    }
+]
