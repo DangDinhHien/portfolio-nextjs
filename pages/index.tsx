@@ -21,11 +21,11 @@ export default function Home() {
       <section id="about" className="snap-center">
         <About />
       </section>
-      <section id="experience" className="snap-center">
-        <Experience />
-      </section>
       <section id="skills" className="snap-start">
         <Skills />
+      </section>
+      <section id="experience" className="snap-center">
+        <Experience />
       </section>
       {/* <section id="projects" className="snap-start">
         <Projects />
