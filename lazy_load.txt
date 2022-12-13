@@ -1,0 +1,66 @@
+// Link reference
+https://dev.to/hotjar/importance-of-lazy-loading-content-56ck
+
+
+import { useState, useEffect } from 'react';
+
+/**
+ * Providing a useRef to a component, this hook will return a value of true or false, based on whether
+ * the ref prop, is visible in the viewport or not
+ * @param ref
+ * @returns {boolean}
+ */
+const useIntersectionObserver = (ref) => {
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  const supportsObserver = () => {
+    return typeof IntersectionObserver !== 'undefined';
+  };
+
+  useEffect(() => {
+    let observer;
+    if (supportsObserver()) {
+      observer = new IntersectionObserver(([entry]) => setIntersecting(entry.isIntersecting));
+      if (ref && ref.current) {
+        observer.observe(ref.current);
+      }
+    } else {
+      setIntersecting(true);
+    }
+
+    return () => observer?.disconnect();
+  }, [ref]);
+
+  return isIntersecting;
+};
+
+export default useIntersectionObserver;
+
+import { useEffect, useRef, useState } from 'react';
+import useIntersectionObserver from 'useIntersectionObserver';
+
+/**
+ *
+ * @param props             Child JSX element
+ * @returns {JSX.Element}
+ * @constructor
+ */
+export const LazyLoadOnScroll = (props) => {
+  const { children } = props;
+  const ref = useRef();
+  const isNotBrowser = typeof window === 'undefined';
+  const refIntersected = useIntersectionObserver(ref);
+  const [visible, setVisible] = useState(isNotBrowser);
+
+  useEffect(() => {
+    if (refIntersected) {
+      setVisible(refIntersected);
+    }
+  }, [refIntersected]);
+ return <div ref={ref}>{visible && children}</div>;
+};
+
+<LazyLoadOnScroll key={key}>
+  <BigComponentToBeLazyLoaded prop1={} prop2={} etc... />
+</LazyLoadOnScroll>
+
