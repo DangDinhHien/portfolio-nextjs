@@ -13,7 +13,7 @@ export default function Projects({}: Props) {
       transition={{ duration: 1.5 }}
       className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-20 md:top-6 uppercase tracking-[20px] text-gray-500 text-2xl">
         Projects
       </h3>
 
@@ -31,10 +31,11 @@ export default function Projects({}: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
               viewport={{ once: true }}
-              src="https://images.unsplash.com/photo-1665365487090-c4dc9cdb6b8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+              src="https://news.blr.com/app/uploads/sites/3/2019/10/Team-project.jpg"
               alt=""
+              className="md:h-[300px] rounded-lg"
             />
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
+            <div className="space-y-10 px-0 xl:px-10 max-w-6xl">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#f7ab0a]">
                   Case Study {i + 1} of {projects.length}:
@@ -42,7 +43,7 @@ export default function Projects({}: Props) {
                 UPS clone
               </h4>
 
-              <p className="text-lg text-center md:text-left">
+              <p className="hidden md:block text-lg text-center md:text-left">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Officia laudantium id, saepe sapiente iure velit voluptatum
                 exercitationem atque obcaecati? Iure atque, soluta vero ab
@@ -53,7 +54,7 @@ export default function Projects({}: Props) {
         ))}
       </div>
 
-      <div className="w-full absolute top-[30%] bg-[#f7ab0a]/10 left-0 h-[500px] -skew-y-12"></div>
+      <div className="w-full absolute top-[30%] bg-[#fff]/4 left-0 h-[500px] -skew-y-12"></div>
     </motion.div>
   );
 }

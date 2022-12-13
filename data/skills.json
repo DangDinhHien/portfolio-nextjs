@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Nextjs",
+        "image": "/images/next_icon.png"
+    },
+    {
+        "id": 2,
+        "name": "Nuxtjs",
+        "image": "/images/nuxt_icon.png"
+    },
+    {
+        "id": 3,
+        "name": "Nodejs",
+        "image": "/images/node_icon.webp"
+    },
+    {
+        "id": 4,
+        "name": "FastAPI",
+        "image": "/images/fastapi_icon.svg"
+    },
+    {
+        "id": 5,
+        "name": "Tailwind",
+        "image": "/images/tailwind_icon.png"
+    },
+    {
+        "id": 6,
+        "name": "TypeScript",
+        "image": "/images/ts_icon.png"
+    },
+    {
+        "id": 7,
+        "name": "Firebase",
+        "image": "/images/firebase_icon.png"
+    },
+    {
+        "id": 8,
+        "name": "CSS3",
+        "image": "/images/css_icon.png"
+    },
+    {
+        "id": 9,
+        "name": "Javascript",
+        "image": "/images/js_icon.png"
+    },
+    {
+        "id": 10,
+        "name": "Mysql",
+        "image": "/images/mysql_icon.png"
+    },
+    {
+        "id": 11,
+        "name": "Google Map",
+        "image": "/images/google_map_icon.png"
+    },
+    {
+        "id": 12,
+        "name": "Vuejs",
+        "image": "/images/vue_icon.png"
+    }
+]

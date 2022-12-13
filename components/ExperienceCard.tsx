@@ -1,11 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
+type Props = {
+  data: {
+    id: number,
+    company: string,
+    role: string,
+    logo: string,
+    icon_skills: string[],
+    descriptions: string[],
+    start_time: string,
+    end_time: string,
+  }
+};
 
-export default function ExperienceCard({}: Props) {
+export default function ExperienceCard({ data }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
       <motion.img
         initial={{
           y: -100,
@@ -14,39 +25,26 @@ export default function ExperienceCard({}: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-        src="https://images.unsplash.com/photo-1602918955248-d1bbfcbfae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"
+        className=" h-20 xl:h-[100px] object-cover object-center"
+        src={data.logo}
         alt=""
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">Web Developer</h4>
-        <p className="font-bold text-2xl mt-1">Hybrid Technologies VN</p>
-        <div className="flex space-x-2 my-2">
-          <img
+        <h4 className="text-2xl md:text-4xl font-light">{data.role}</h4>
+        <p className="font-bold text-xl md:text-2xl mt-1 whitespace-nowrap">{data.company}</p>
+        <div className="hidden md:flex space-x-2 my-2">
+          {data.icon_skills.map((icon, idx) => (<img
+            key={idx}
             className="h-10 w-10 rounded-full object-cover"
-            src="https://images.unsplash.com/photo-1574417836112-fda6a03dae97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            src={icon}
             alt=""
-          />
-          <img
-            className="h-10 w-10 rounded-full object-cover"
-            src="https://images.unsplash.com/photo-1574417836112-fda6a03dae97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt=""
-          />
-          <img
-            className="h-10 w-10 rounded-full object-cover"
-            src="https://images.unsplash.com/photo-1574417836112-fda6a03dae97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt=""
-          />
+          />))}
         </div>
         <p className="uppercase py-5 text-gray-300">
-          Start work ... - Ended ...
+          {data.start_time + " - " + data.end_time}
         </p>
-        <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>Sumany Sumany SumanySumany SumanySumany</li>
-          <li>Sumany Sumany SumanySumany SumanySumany</li>
-          <li>Sumany Sumany SumanySumany SumanySumany</li>
-          <li>Sumany Sumany SumanySumany SumanySumany</li>
-          <li>Sumany Sumany SumanySumany SumanySumany</li>
+        <ul className="list-disc space-y-4 ml-5 text-sm md:text-lg">
+          {data.descriptions.map((des, idx) => (<li key={idx}>{des}</li>))}
         </ul>
       </div>
     </article>

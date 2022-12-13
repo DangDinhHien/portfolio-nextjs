@@ -25,22 +25,17 @@ export default function Header({}: Props) {
         className="flex flex-row items-center"
       >
         <SocialIcon
-          url="https://twitter.com/jaketrent"
+          url="https://www.linkedin.com/in/hi%E1%BB%83n-%C4%91%E1%BA%B7ng-%C4%91inh-b64abb243/"
           fgColor="gray"
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://twitter.com/jaketrent"
+          url="https://github.com/DangDinhHien"
           fgColor="gray"
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://twitter.com/jaketrent"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://twitter.com/jaketrent"
+          url="https://www.facebook.com/ddhienpy"
           fgColor="gray"
           bgColor="transparent"
         />
@@ -67,9 +62,11 @@ export default function Header({}: Props) {
           fgColor="gray"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get In Touch
-        </p>
+        <Link href="#contact">
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+            Get In Touch
+          </p>
+        </Link>
       </motion.div>
     </header>
   );
